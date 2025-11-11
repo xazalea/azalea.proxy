@@ -6,7 +6,7 @@ let blocker: Engine | null = null;
 
 async function getBlocker(): Promise<Engine> {
   if (!blocker) {
-    blocker = Engine.fromPrebuiltAdsAndTracking();
+    blocker = await Engine.fromPrebuiltAdsAndTracking();
   }
   return blocker;
 }
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
       // Apply adblocker if enabled
       if (adblocker && contentType.includes('text/html')) {
         try {
-          const adBlocker = getBlocker();
+          const adBlocker = await getBlocker();
           const root = parse(content);
           
           // Get all script, link, img, and iframe tags
