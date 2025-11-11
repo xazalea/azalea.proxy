@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parse } from 'node-html-parser';
-import { Engine } from '@ghostery/adblocker';
+import { FiltersEngine, Request } from '@ghostery/adblocker';
 
-let blocker: Engine | null = null;
+let blocker: FiltersEngine | null = null;
 
-async function getBlocker(): Promise<Engine> {
+async function getBlocker(): Promise<FiltersEngine> {
   if (!blocker) {
-    blocker = await Engine.fromPrebuiltAdsAndTracking();
+    blocker = await FiltersEngine.fromPrebuiltAdsAndTracking();
   }
   return blocker;
 }
@@ -93,10 +93,12 @@ export async function POST(request: NextRequest) {
             if (src) {
               try {
                 const fullUrl = new URL(src, targetUrl.toString()).toString();
-                const result = adBlocker.match(fullUrl, {
+                const request = Request.fromRawDetails({
+                  url: fullUrl,
                   type: element.tagName.toLowerCase() as any,
                   sourceUrl: targetUrl.toString(),
                 });
+                const result = adBlocker.match(request);
                 
                 if (result && result.match) {
                   toRemove.push(element);
@@ -104,10 +106,12 @@ export async function POST(request: NextRequest) {
               } catch {
                 // If URL parsing fails, check the src directly
                 try {
-                  const result = adBlocker.match(src, {
+                  const request = Request.fromRawDetails({
+                    url: src,
                     type: element.tagName.toLowerCase() as any,
                     sourceUrl: targetUrl.toString(),
                   });
+                  const result = adBlocker.match(request);
                   
                   if (result && result.match) {
                     toRemove.push(element);

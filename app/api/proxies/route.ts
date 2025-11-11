@@ -10,6 +10,7 @@ interface ProxyResponse {
     uptime?: number;
     timeout?: number;
     proxy: string;
+    alive?: boolean;
     ip_data?: {
       country?: string;
     };
