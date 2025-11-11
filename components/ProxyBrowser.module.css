@@ -1,0 +1,161 @@
+.browser {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+  min-height: 600px;
+}
+
+.browserHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sapphire-dark);
+}
+
+.proxyInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--lavender-light);
+  border-radius: 8px;
+}
+
+.proxyLabel {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.proxyValue {
+  color: var(--sapphire-primary);
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.noProxy {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-secondary);
+}
+
+.settings {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  background: var(--lavender-light);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggleInput {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: var(--sapphire-primary);
+}
+
+.toggleText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--sapphire-dark);
+  font-weight: 500;
+}
+
+.toggleIcon {
+  font-size: 18px;
+}
+
+.urlForm {
+  margin-bottom: 28px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.inputGroup .matte-input {
+  flex: 1;
+}
+
+.inputGroup .matte-button {
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #FFF3E0;
+  border: 2px solid #FF9800;
+  border-radius: 10px;
+  color: #E65100;
+  margin-bottom: 28px;
+}
+
+.errorIcon {
+  font-size: 24px;
+}
+
+.info {
+  margin-top: 36px;
+  padding: 28px;
+  background: var(--lavender-light);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.infoTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sapphire-dark);
+  margin-bottom: 18px;
+}
+
+.infoList {
+  list-style-position: inside;
+  color: var(--text-secondary);
+  line-height: 2.2;
+}
+
+.infoList li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .browser {
+    padding: 24px;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+  }
+
+  .inputGroup .matte-button {
+    width: 100%;
+  }
+}
+

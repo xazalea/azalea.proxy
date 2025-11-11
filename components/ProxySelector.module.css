@@ -1,0 +1,162 @@
+.selector {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+  height: calc(100vh - 240px);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--sapphire-dark);
+}
+
+.refreshButton {
+  background: var(--lavender-light);
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--sapphire-primary);
+  transition: all 0.2s ease;
+}
+
+.refreshButton:hover {
+  background: var(--sapphire-primary);
+  color: white;
+  transform: rotate(180deg);
+}
+
+.refreshButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stat {
+  color: var(--text-secondary);
+}
+
+.statActive {
+  color: var(--sapphire-primary);
+  font-weight: 500;
+}
+
+.proxyList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.proxyItem {
+  padding: 18px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--background);
+}
+
+.proxyItem:hover {
+  border-color: var(--sapphire-primary);
+  background: var(--lavender-light);
+  transform: translateX(4px);
+}
+
+.proxyItemActive {
+  border-color: var(--sapphire-primary);
+  background: linear-gradient(135deg, var(--lavender-light) 0%, var(--surface) 100%);
+  box-shadow: 0 2px 8px rgba(108, 115, 156, 0.2);
+}
+
+.proxyHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.proxyIp {
+  font-weight: 600;
+  color: var(--sapphire-dark);
+  font-family: 'Courier New', monospace;
+}
+
+.proxyPort {
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+.proxyProtocol {
+  background: var(--sapphire-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.proxyDetails {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.proxyCountry {
+  color: var(--text-secondary);
+}
+
+.proxyAnonymity {
+  color: var(--peach-accent);
+  font-weight: 500;
+}
+
+.proxyUptime {
+  font-weight: 500;
+}
+
